@@ -29,7 +29,7 @@
 				$reg  = "INSERT INTO usertable(email, password) VALUES('$email','$pass')";
 				mysqli_query ($con ,$reg);
 				echo '<script>alert("Welcome... Now Login Plz")</script>';
-				header('location:login2.php');
+				header('location:index.php');
 				
 				
 			}

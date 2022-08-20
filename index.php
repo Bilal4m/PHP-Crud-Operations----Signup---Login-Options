@@ -1,49 +1,80 @@
 <!DOCTYPE html>
-<?php
-  session_start();
-  $conn = mysqli_connect('localhost','root','','crud');
-  if(isset($_SESSION['email'])){
-      // echo "<script>window.open('login.php',_self)</script>";
-      echo $_SESSION['email'];
-  }
-
-?>
-
 <html lang="en">
 <head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register & Login User</title>
+	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-div {
-  background-image: url('images/bg22.jpg') ;
-  height: 100vh;
-  width:100vh;
-  background-size:cover;
-  background-position: 100% 100%;
+	<style>
+		body{
+    background: linear-gradient(rgba(0,0,50,0.5), rgba(0,0,50,0.5)),url(bg2.jpg); 
+    /* background-size:cover; */
+    background-position: center;
 }
 
-</style> 
+.login-box{
+    max-width: 700px;
+    float: none;
+    margin: 150px auto;
+}
+
+.login-left{
+    background: rgba(211,211,211,0.5);
+    padding: 30px;
+}
+.login-right{
+    background: #fff;
+    padding: 30px;
+}
+.form-control{
+    background-color: transparent !important;
+}
+
+
+	</style>
 </head>
 <body>
-<br><br>
+	<div class="container">
+		<div class="login-box">
+			<div class="row">
+				<div class="col-md-6 login-left">
+					<h2>Login</h2>
+					<form action="validation.php" method="post">
+						<div class="form-group">
+							<label for="email">Email</label>
+						    <input type="email" name="email" class="form-control" required>
+						</div>
 
-<div class="container" >
-  <h3>Welcome To My Form Page</h3>
-  <a class="btn btn-primary " href="add_user.php">Fill New Form</a>
-  <a class="btn btn-primary " href="view_user.php">View Existing Form</a>
+						<div class="form-group">
+							<label for="user">Password</label>
+						    <input type="password" name="password" class="form-control" required>
+						</div>
+						<button type="submit" class="btn btn-primary"> Login </button>
+					</form>
+				</div>
 
+				<div class="col-md-6 login-right">
+					<h2>Register</h2>
+					<form action="registration.php" method="post">
+					<div class="form-group">
+							<label for="email">Email</label>
+						    <input type="email" name="email" class="form-control" required>
+						</div>
 
-  <a class="btn btn-danger " href="logout.php">Logout</a>
-  
+						<div class="form-group">
+							<label for="user">Password</label>
+						    <input type="password" name="password" class="form-control" required>
+						</div>
+						<button type="submit" class="btn btn-primary"> Register </button>
+					</form>
+				</div>
 
-</div>
-
+				
+			</div>
+		</div>
+	</div>
 </body>
 </html>

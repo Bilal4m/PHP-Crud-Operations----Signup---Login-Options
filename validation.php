@@ -21,9 +21,9 @@
     $num = mysqli_num_rows($result);
 
     if($num == 1){
-      header('location:login2.php');
-    }else{
       header('location:index.php');
+    }else{
+      header('location:home.php');
     }
   
 
