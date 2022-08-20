@@ -14,16 +14,19 @@
     $pass = $_POST['password'];
 
     
-    $s = "SELECT * FROM usertable WHERE email='$email && password = $pass";
+    $s = "SELECT * FROM usertable WHERE email='$email' && password = '$pass' ";
 
     $result = mysqli_query($con , $s);
 
     $num = mysqli_num_rows($result);
 
     if($num == 1){
-      header('location:index.php');
-    }else{
       header('location:home.php');
+      
+    }else{
+      echo "Wrong Credentials";
+      header('location:index.php');
+    
     }
   
 
